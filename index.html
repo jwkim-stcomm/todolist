@@ -56,18 +56,34 @@
         </div>
     </div>
 
-    <div class="count-wrap">
-        <input type="text" value="0" class="countText">
-        <button class="plus">+</button>
-        <button class="minus">-</button>
+    <!-- counting script -->
+    <div class="count-script-wrap">
+        <p>Count Script</p>
+        <div class="counting-wrap">
+            <p class="count-numb">0</p>
+            <div class="btn-wrap">
+                <button class="plus-btn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button class="minus-btn">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+            </div>
+        </div>
     </div>
     <script>
-        var countText = document.getElementsByClassName('countText')[0];
-        countText.style.backgroundColor = 'blue';
-        console.log(countText);
+        var countNumb = Number($('.count-numb').text()),
+            currentNumb = countNumb;
+            
+        $('.plus-btn').on('click', function(){
+            currentNumb++;
+            $('.count-numb').text(currentNumb);
+        });
 
-        var countTextJq = $('.countText');
-        countTextJq.css('background', 'green');
+        $('.minus-btn').on('click', function(){
+            currentNumb--;
+            $('.count-numb').text(currentNumb);
+        });
     </script>
 </body>
 </html>

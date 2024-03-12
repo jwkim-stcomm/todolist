@@ -25,6 +25,9 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.list-content-wrap .btn-wrap i {
+    cursor: pointer;
+}
 .list-content-wrap .btn-wrap .fa-pen {
     margin-right: 10px;
 }
@@ -49,5 +52,35 @@ body {
     background: transparent;
     color: #fff;
     padding: 10px 15px;
-    border: 1px solid rgba(255,255,255,0.3); 
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+}
+
+/* counting-script */
+.count-script-wrap {
+    padding: 40px;
+    font-size: 25px;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+.counting-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.counting-wrap .countText {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    margin-right: 5px;
+}
+.counting-wrap .btn-wrap {
+    display: flex;
+}
+.counting-wrap .btn-wrap button {
+    line-height: 30px;
+    background: transparent;
+    color: #fff;
+    padding: 10px 21px;
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
 }
