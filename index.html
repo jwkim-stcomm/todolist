@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공부하지우</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="./css/common.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -62,10 +62,10 @@
         <div class="counting-wrap">
             <p class="count-numb">0</p>
             <div class="btn-wrap">
-                <button class="plus-btn">
+                <button class="count-btn plus">
                     <i class="fa-solid fa-plus"></i>
                 </button>
-                <button class="minus-btn">
+                <button class="count-btn minus">
                     <i class="fa-solid fa-minus"></i>
                 </button>
             </div>
@@ -75,13 +75,12 @@
         var countNumb = Number($('.count-numb').text()),
             currentNumb = countNumb;
             
-        $('.plus-btn').on('click', function(){
-            currentNumb++;
-            $('.count-numb').text(currentNumb);
-        });
-
-        $('.minus-btn').on('click', function(){
-            currentNumb--;
+        $('.count-btn').on('click', function(){
+            if($(this).hasClass('plus')){
+                currentNumb++;
+            }else{
+                currentNumb--;
+            }
             $('.count-numb').text(currentNumb);
         });
     </script>
