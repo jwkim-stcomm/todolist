@@ -66,6 +66,7 @@ body {
 .counting-wrap {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .counting-wrap .countText {
     width: 100%;
