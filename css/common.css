@@ -27,10 +27,21 @@ body {
 }
 .list-content-wrap .btn-wrap i {
     cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
 }
-.list-content-wrap .btn-wrap .fa-pen {
-    margin-right: 10px;
+/* if modify */
+.list-wrap li .btn-wrap .fa-check,
+.list-wrap li.modify .btn-wrap .fa-pen {
+    display: none;
 }
+.list-wrap li.modify .btn-wrap .fa-check {
+    display: inline-block;
+}
+.input-text {
+    border: none;
+}
+
 .new-todo-wrap {
     font-size: 25px;
     color: #fff;

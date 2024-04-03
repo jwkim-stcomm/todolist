@@ -20,6 +20,7 @@
                 <div class="list-content-wrap">
                     <p class="list-text">숨 쉬기</p>
                     <div class="btn-wrap">
+                        <i class="fa-solid fa-check"></i>
                         <i class="fa-solid fa-pen"></i>
                         <i class="fa-solid fa-trash"></i>
                     </div>
@@ -30,6 +31,7 @@
                 <div class="list-content-wrap">
                     <p class="list-text">밥 먹기</p>
                     <div class="btn-wrap">
+                        <i class="fa-solid fa-check"></i>
                         <i class="fa-solid fa-pen"></i>
                         <i class="fa-solid fa-trash"></i>
                     </div>
@@ -40,6 +42,7 @@
                 <div class="list-content-wrap">
                     <p class="list-text">잠자기</p>
                     <div class="btn-wrap">
+                        <i class="fa-solid fa-check"></i>
                         <i class="fa-solid fa-pen"></i>
                         <i class="fa-solid fa-trash"></i>
                     </div>
@@ -83,6 +86,7 @@
                 '<div class="list-content-wrap">'+
                     '<p class="list-text">' + addInput + '</p>'+
                     '<div class="btn-wrap">'+
+                        '<i class="fa-solid fa-check"></i>'+
                         '<i class="fa-solid fa-pen"></i>'+
                         '<i class="fa-solid fa-trash"></i>'+
                     '</div>'+
@@ -99,6 +103,27 @@
                 currentNumb--;
             }
             $('.count-numb').text(currentNumb);
+        });
+
+        $(document).on('click', '.fa-trash', function(){
+            $(this).parents('li').remove();
+        });
+
+        $(document).on('click', '.fa-pen', function(){
+            var liWrap = $(this).parents('li'),
+                textWrap = liWrap.find('.list-text');
+
+            liWrap.addClass('modify');
+            textWrap.html('<input class="input-text" type="text" value="'+ textWrap.text() +'"/>');
+        });
+
+        $(document).on('click', '.fa-check', function(){
+            var liWrap = $(this).parents('li'),
+                inputWrap = liWrap.find('.input-text');
+
+            liWrap.removeClass('modify');
+            liWrap.find('.list-text').text(inputWrap.val());
+            inputWrap.remove();
         });
     </script>
 </body>
