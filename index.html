@@ -182,16 +182,17 @@
 
         addBtn.on('click', function(){
             var addInput = $('.add-input').val(),
-                listFormat = '<li>'+
-                '<div class="list-content-wrap">'+
-                    '<p class="list-text">' + addInput + '</p>'+
-                    '<div class="btn-wrap">'+
-                        '<i class="fa-solid fa-check"></i>'+
-                        '<i class="fa-solid fa-pen"></i>'+
-                        '<i class="fa-solid fa-trash"></i>'+
-                    '</div>'+
-                '</div>'+
-                '</li>';
+                listFormat = 
+                `<li>
+                    <div class="list-content-wrap">
+                        <p class="list-text">${addInput}</p>
+                        <div class="btn-wrap">
+                            <i class="fa-solid fa-check"></i>
+                            <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </li>`;
             
             listWrap.append(listFormat);
         });
