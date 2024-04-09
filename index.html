@@ -5,8 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공부하지우</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/common.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="./css/common.css"> -->
+    <style>
+        * {padding: 0; margin: 0; list-style: none;}
+        body {
+            background-color: #ff6666;
+        }
+        .title-wrap {
+            color: #fff;
+            padding: 40px;
+        }
+        .title-wrap h1 {
+            font-weight: normal;
+            padding-bottom: 10px;
+        }
+        .title-wrap p {
+            letter-spacing: 3px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+        .list-wrap li {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 40px;
+            margin-bottom: 5px;
+        }
+        .list-content-wrap {
+            display: flex;
+            justify-content: space-between;
+        }
+        .list-content-wrap .btn-wrap i {
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+        /* if modify */
+        .list-wrap li .btn-wrap .fa-check,
+        .list-wrap li.modify .btn-wrap .fa-pen {
+            display: none;
+        }
+        .list-wrap li.modify .btn-wrap .fa-check {
+            display: inline-block;
+        }
+        .input-text {
+            border: none;
+        }
+
+        .new-todo-wrap {
+            font-size: 25px;
+            color: #fff;
+            padding: 40px;
+        }
+        .add-todo-wrap {
+            display: flex;
+            padding-top: 15px;
+        }
+        .add-todo-wrap input {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            margin-right: 5px;
+        }
+        .add-todo-wrap button {
+            min-width: 110px;
+            line-height: 30px;
+            background: transparent;
+            color: #fff;
+            padding: 10px 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+        }
+
+        /* counting-script */
+        .count-script-wrap {
+            padding: 40px;
+            font-size: 25px;
+            color: #fff;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        .counting-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .counting-wrap .countText {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            margin-right: 5px;
+        }
+        .counting-wrap .btn-wrap {
+            display: flex;
+        }
+        .counting-wrap .btn-wrap button {
+            line-height: 30px;
+            background: transparent;
+            color: #fff;
+            padding: 10px 21px;
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="title-wrap">
