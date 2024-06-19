@@ -16,6 +16,7 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 .list-wrap li {
+    position: relative;
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
     padding: 15px 40px;
@@ -25,19 +26,74 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.list-content-wrap .btn-wrap i {
+.list-wrap li .list-text {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+}
+.list-wrap li {
+    &:before {
+        content: '';
+        display: none;
+        width: 17px;
+        height: 10px;
+        position: absolute;
+        left: 10px;
+        top: 45%;
+        border: solid 3px #444;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        transform-origin: top left;
+        transition: all 0.2s;
+    }
+    &.checked {
+        &:before {
+            display: block;
+            animation: checked 0.5s ease both;
+            animation-play-state: running!important;
+        }
+        .list-text {
+            color: #444;
+            font-weight: bold;
+        }
+    }
+}
+@keyframes checked {
+    0% {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    20% {
+      opacity: 1;
+      width: 0;
+      height: 10px;
+    }
+    100% {
+      width∂: 17px;
+    }
+}
+
+.list-wrap li button {
+    min-width: 20px;
     cursor: pointer;
     margin-left: 10px;
+    border: none;
+    background: none;
+    color: #fff;
+}
+.list-content-wrap .btn-wrap i {
     font-size: 16px;
 }
 /* if modify */
-.list-wrap li .btn-wrap .fa-check,
-.list-wrap li.modify .btn-wrap .fa-pen {
-    display: none;
+.update-input {
+    width: 100%;
+    border: none;
+    padding: 10px 15px;
 }
-.list-wrap li.modify .btn-wrap .fa-check {
-    display: inline-block;
-}
+
 .input-text {
     border: none;
 }

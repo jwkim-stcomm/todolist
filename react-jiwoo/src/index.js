@@ -3,27 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './App.css';
 import Title from './Components/Title';
-import List from './Components/List';
-import AddList from './Components/AddList';
+import Todo from './Components/Todo';
 import Count from './Components/Count';
+import Study from './Components/Study';
 import reportWebVitals from './reportWebVitals';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Title tit='공부하지우' des='Jiwoo Todo List'/>
+    <Title tit='공부하지우' des='투두지우' onChangeMode={()=>{
+      alert('짜쟌!');
+    }}/>
     <div className="content-wrap">
-      <ul className="list-wrap">
-
-        <List tit='숨쉬기'/>
-        <List tit='잠자기'/>
-        <List tit='똥싸기'/>
-        
-      </ul>
-
-      <AddList />
+      <Todo/>
     </div>
     <Count />
+    <Study />
   </React.StrictMode>
 );
 reportWebVitals();
